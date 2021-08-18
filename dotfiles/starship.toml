@@ -1,0 +1,33 @@
+add_newline = false
+
+[character]
+success_symbol = "[›](bold green)"
+error_symbol = "[›](bold red)"
+
+[username]
+disabled = true
+
+[directory]
+read_only = ""
+
+[golang]
+symbol = "go "
+
+[nodejs]
+symbol = "js "
+
+[python]
+symbol = "py "
+
+[ruby]
+symbol = "rb "
+
+[rust]
+symbol = "rs "
+
+[jobs]
+symbol = "⊕"
+
+[git_status]
+# Too slow at the moment... Reconsider in the future
+disabled = true
