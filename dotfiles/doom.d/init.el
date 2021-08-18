@@ -135,7 +135,6 @@
        ;;factor
        ;;ledger            ; an accounting system in Emacs
        (lua               ; one-based indices? one-based indices
-        +moonscript
         +lsp)
 
        markdown          ; writing docs for people to ignore

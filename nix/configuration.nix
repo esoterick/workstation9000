@@ -5,7 +5,6 @@
     ./host.nix
 
     ./machines/current.nix
-    ./homes/current.nix
   ];
 
   boot.cleanTmpDir = true;

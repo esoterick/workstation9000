@@ -2,12 +2,6 @@
 let
   keys = import ../keys.nix;
 in {
-  nixpkgs.overlays = [
-    (import (builtins.fetchTarball {
-      url = https://github.com/nix-community/emacs-overlay/archive/master.tar.gz;
-    }))
-  ];
-
   time.timeZone = "America/New_York";
 
   security.sudo.enable = true;
@@ -53,6 +47,7 @@ in {
     nix-index
     openssl
     patchelf
+    ripgrep
     sqlite
     starship
     syncthing
@@ -66,11 +61,6 @@ in {
   programs = {
     fish.enable = true;
     mosh.enable = true;
-  };
-
-  services.emacs = {
-    enable = true;
-    package = (pkgs.emacsGit-nox.override { nativeComp = true; } );
   };
 
   services.syncthing = {
