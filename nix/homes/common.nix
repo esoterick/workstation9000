@@ -120,4 +120,18 @@ in {
       tmuxPlugins.logging
     ];
   };
+
+  programs.keychain = {
+    enable = true;
+    keys = [
+      "id_rsa"
+      "id_ed25519"
+      "do_id_ed25519"
+      "D86CC25D"
+    ];
+    agents = [
+      "ssh"
+      "gpg"
+    ];
+  };
 }

@@ -43,6 +43,7 @@ in {
     inetutils
     inotify-tools
     jq
+    keychain
     mosh
     nix-index
     openssl
