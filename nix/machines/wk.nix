@@ -12,13 +12,15 @@ in {
   };
 
   virtualisation.docker.enable = true;
+  virtualisation.docker.extraOptions = "--registry-mirror=https://dockerhub-mirror.internal.digitalocean.com";
+
 
   users.mutableUsers = false;
   users.users.rlambert = {
     isNormalUser = true;
     home = "/home/rlambert";
     description = "Robert J. Lambert III";
-    extraGroups = [ "wheel" ];
+    extraGroups = [ "wheel" "docker" ];
     shell = pkgs.fish;
     openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIE0y63gYBa2F+lBNISfNvCsDQPeHNyPIFgWWji2kC3hO rl@Roberts-MBP.hyrule.local"

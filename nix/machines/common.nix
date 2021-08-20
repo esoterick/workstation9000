@@ -48,6 +48,8 @@ in {
     nix-index
     openssl
     patchelf
+    pinentry
+    pinentry-curses
     ripgrep
     sqlite
     starship

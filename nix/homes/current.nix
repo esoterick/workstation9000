@@ -1,1 +1,1 @@
-wk.nix
+/home/rlambert/src/workstation9000/nix/homes/wk.nix

@@ -23,7 +23,17 @@ in {
   home.file.".doom.d/config.el".source = ../../dotfiles/doom.d/init.el;
   home.file.".doom.d/packages.el".source = ../../dotfiles/doom.d/packages.el;
 
-  home.packages = [ doom-emacs ];
+  home.packages = with pkgs; [
+    doom-emacs
+    pinentry_emacs
+    python39
+    python39Packages.pip
+    python39Packages.nose
+    python39Packages.poetry
+    python39Packages.virtualenv
+    ruby_3_0
+    chruby-fish
+  ];
   home.file.".emacs.d/init.el".text = ''
       (load "default.el")
   '';
@@ -37,6 +47,9 @@ in {
     enable = true;
     defaultCacheTtl = 1800;
     enableSshSupport = true;
+    extraConfig = ''
+      allow-emacs-pinentry;
+    '';
   };
 
   programs.tmux = {
@@ -118,20 +131,6 @@ in {
       tmuxPlugins.sensible
       tmuxPlugins.nord
       tmuxPlugins.logging
-    ];
-  };
-
-  programs.keychain = {
-    enable = true;
-    keys = [
-      "id_rsa"
-      "id_ed25519"
-      "do_id_ed25519"
-      "D86CC25D"
-    ];
-    agents = [
-      "ssh"
-      "gpg"
     ];
   };
 }
