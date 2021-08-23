@@ -1,3 +1,16 @@
+# turn off the damn greeting
+set fish_greeting
+
+# rg
+if command -v fzf &> /dev/null && command -v rg &> /dev/null
+  set -gx FZF_DEFAULT_COMMAND  'rg --files --no-ignore-vcs --hidden'
+end
+
+# gpg
+set -gx GPG_TTY (tty)
+# set -gx SSH_AUTH_SOCK (gpgconf --list-dirs agent-ssh-socket)
+gpgconf --launch gpg-agent
+
 alias n="nvim"
 alias e="emacsclient"
 
