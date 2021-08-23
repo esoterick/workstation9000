@@ -25,14 +25,15 @@ in {
 
   home.packages = with pkgs; [
     doom-emacs
-    pinentry_emacs
+    pinentry-emacs
     python39
     python39Packages.pip
     python39Packages.nose
     python39Packages.poetry
     python39Packages.virtualenv
-    ruby_3_0
+    ruby
     chruby-fish
+    bundix
   ];
   home.file.".emacs.d/init.el".text = ''
       (load "default.el")
@@ -48,7 +49,9 @@ in {
     defaultCacheTtl = 1800;
     enableSshSupport = true;
     extraConfig = ''
-      allow-emacs-pinentry;
+      allow-emacs-pinentry
+      allow-loopback-pinentry
+      pinentry-program ${pkgs.pinentry-emacs}/bin/pinentry
     '';
   };
 
