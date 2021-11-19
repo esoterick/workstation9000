@@ -32,6 +32,7 @@ in {
     python39Packages.poetry
     python39Packages.virtualenv
     ruby
+    chruby
     chruby-fish
     bundix
   ];
