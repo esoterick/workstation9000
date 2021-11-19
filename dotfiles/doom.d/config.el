@@ -54,8 +54,3 @@
 ;; (require 'exec-path-from-shell)
 ;; (when (display-graphic-p)
 ;;  (exec-path-from-shell-initialize))
-
-(use-package pinentry
-  :pin melpa
-  :config
-  (pinentry-start))
